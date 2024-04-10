@@ -1,0 +1,17 @@
+{% extends "food/base.html" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {% block title %} Logout{% endblock %} </title>
+    </head>
+    <body>
+        {% block body %}
+        <div class="text-center">
+            <h1> You Have beed logout </h1>
+        <a class="text-center text-warning p-3" href="{% url 'login' %}"> Login</a>    </body>
+        </div>
+        
+        {% endblock body %}
+
+        
+</html>

@@ -1,0 +1,29 @@
+{% extends "food/base.html" %}
+<title> {% block title %} Login{% endblock %} </title>
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4" >
+            <div class="card">
+                <div class="card-header bg-warning text-black">
+                    <div class="card_title">
+                        <h2 class="text-center"> Login </h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                {{ field.name}}
+                                {{ field}}
+                        {% endfor %}
+                        <button type="submit"  class="btn btn-warning"> Login </button>
+                    </form>
+                    <a class="text-warning p-3" href="{% url 'register' %}"> Register</a>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
